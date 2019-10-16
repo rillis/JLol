@@ -2,13 +2,13 @@ package com.jlol;
 
 public class ChampionInfo {
 	int attack;
-	int defence;
+	int defense;
 	int magic;
 	int difficulty;
 	
-	public ChampionInfo(int attack,	int defence, int magic, int difficulty) {
+	public ChampionInfo(int attack,	int defense, int magic, int difficulty) {
 		this.attack = attack;
-		this.defence = defence;
+		this.defense = defense;
 		this.magic = magic;
 		this.difficulty = difficulty;
 	}
