@@ -1,4 +1,4 @@
-package examples;
+package com.jlol.examples;
 
 import java.io.IOException;
 
@@ -6,7 +6,7 @@ import com.jlol.Champion;
 import com.jlol.ChampionList;
 import com.jlol.LolAPI;
 
-public class ChampionListExample {
+class ChampionListExample {
 	public static void main(String[] args) {
 		//Token here
 		LolAPI l = new LolAPI("RGAPI-x");
