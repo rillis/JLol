@@ -1,14 +1,14 @@
 package com.jlol;
 
 public class Champion {
-	String id;
-	String key;
-	String name;
-	String title;
-	String blurb;
-	ChampionInfo info;
-	String parType;
-	ChampionStats stats;
+	public String id;
+	public String key;
+	public String name;
+	public String title;
+	public String blurb;
+	public ChampionInfo info;
+	public String parType;
+	public ChampionStats stats;
 	public Champion(String id, String key, String name, String title, String blurb, ChampionInfo info, String parType, ChampionStats stats) {
 		this.id = id;
 		this.key = key;
