@@ -2,9 +2,9 @@ package com.jlol.examples;
 
 import java.io.IOException;
 
-import com.jlol.Champion;
-import com.jlol.ChampionList;
 import com.jlol.LolAPI;
+import com.jlol.champion.Champion;
+import com.jlol.champion.ChampionList;
 
 class ChampionListExample {
 	public static void main(String[] args) {

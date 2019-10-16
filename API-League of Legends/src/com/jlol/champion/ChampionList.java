@@ -1,8 +1,11 @@
-package com.jlol;
+package com.jlol.champion;
 
 import java.io.IOException;
 import java.util.Iterator;
 import org.json.JSONObject;
+
+import com.jlol.LolAPI;
+import com.jlol.Methods;
 
 public class ChampionList {
 	String token;

@@ -1,4 +1,4 @@
-package com.jlol;
+package com.jlol.champion;
 
 public class ChampionInfo {
 	int attack;

@@ -1,4 +1,4 @@
-package com.jlol;
+package com.jlol.champion;
 
 public class Champion {
 	public String id;

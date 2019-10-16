@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-class Methods {
-	static String getWebsiteContent(String url) throws IOException{
+public class Methods {
+	public static String getWebsiteContent(String url) throws IOException{
 		URL uri= new URL(url);
         URLConnection ec = uri.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(ec.getInputStream(), "UTF-8"));
