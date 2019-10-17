@@ -10,3 +10,26 @@ import com.jlol.*;
 
 LolAPI api = new LolAPI("LOL API-KEY HERE");
 ```
+
+### Doc
+com.jlol.LolAPI
+```java
+getToken() : String
+getLastVersion() : String
+```
+com.jlol.champion.ChampionList
+```java
+getChampionList(String version, String Locale) : Champion[]
+
+Locale example: Locale.ENGLISH_US (com.jlol.locale.Locale)
+```
+com.jlol.champion.Champion
+```java
+getImageURL(String version) : String
+getSplashImageUrl() : String
+getSplashImageSkinUrl(int skinId) : String
+```
+com.jlol.champion.skin
+```java
+getSkinListFromChampion(Champion c, String version, String locale) : Skin[]
+```
