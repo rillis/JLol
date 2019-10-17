@@ -33,3 +33,32 @@ com.jlol.champion.skin
 ```java
 getSkinListFromChampion(Champion c, String version, String locale) : Skin[]
 ```
+
+Methods to get a Champion (com.jlol.champion.Champion):
+
+Method 1: Getting from list.
+```java
+	LolAPI l = new LolAPI("RGAPI-x");
+	String last_version = l.getLastVersion();
+	try {
+		Champion[] c = new ChampionList(l).getChampionList(last_version, Locale.PORTUGUESE);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+```
+
+Method 2: Searching.
+```java
+	LolAPI l = new LolAPI("RGAPI-x");
+		
+		String champID = "wu ko ng";
+		
+		Champion champ = new Champion(champID, l, l.getLastVersion(), Locale.PORTUGUESE);
+		if(!champ.error) {
+			System.out.println(champ.name); //Wukong
+			System.out.println(champ.id); //MonkeyKing
+			System.out.println(champ.stats.attackDamage); //68.0
+		}else {
+			System.out.println("Error");
+		}
+```

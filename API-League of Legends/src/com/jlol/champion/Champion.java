@@ -1,5 +1,9 @@
 package com.jlol.champion;
 
+import java.io.IOException;
+
+import com.jlol.LolAPI;
+
 public class Champion {
 	public String id;
 	public String key;
@@ -9,7 +13,36 @@ public class Champion {
 	public ChampionInfo info;
 	public String parType;
 	public ChampionStats stats;
-	public Champion(String id, String key, String name, String title, String blurb, ChampionInfo info, String parType, ChampionStats stats) {
+	public boolean error = false;
+	
+	public Champion(String searchId, LolAPI api, String version, String locale) {
+		Champion c = null;
+		try {
+			c = new ChampionList(api).searchChampionByID(version, locale, searchId);
+			if(c==null) {
+				c = new ChampionList(api).searchChampionByName(version, locale, searchId);
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		if(c==null) {
+			error = true;
+		}else {
+			this.id = c.id;
+			this.key = c.key;
+			this.name = c.name;
+			this.title = c.title;
+			this.blurb = c.blurb;
+			this.info = c.info;
+			this.parType = c.parType;
+			this.stats = c.stats;
+		}
+	}
+	
+	Champion(String id, String key, String name, String title, String blurb, ChampionInfo info, String parType, ChampionStats stats) {
 		this.id = id;
 		this.key = key;
 		this.name = name;
