@@ -3,6 +3,7 @@ package com.jlol.champion;
 import java.io.IOException;
 
 import com.jlol.LolAPI;
+import com.jlol.exception.ChampionNotFound;
 
 public class Champion {
 	public String id;
@@ -13,24 +14,16 @@ public class Champion {
 	public ChampionInfo info;
 	public String parType;
 	public ChampionStats stats;
-	public boolean error = false;
 	
-	public Champion(String searchId, LolAPI api, String version, String locale) {
+	public Champion(String searchId, LolAPI api, String version, String locale) throws ChampionNotFound {
 		Champion c = null;
 		try {
-			c = new ChampionList(api).searchChampionByID(version, locale, searchId);
-			if(c==null) {
-				c = new ChampionList(api).searchChampionByName(version, locale, searchId);
-			}
+			c = new ChampionList(api).searchChampionByName(version, locale, searchId);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
-		
-		if(c==null) {
-			error = true;
-		}else {
+		}
 			this.id = c.id;
 			this.key = c.key;
 			this.name = c.name;
@@ -39,7 +32,6 @@ public class Champion {
 			this.info = c.info;
 			this.parType = c.parType;
 			this.stats = c.stats;
-		}
 	}
 	
 	Champion(String id, String key, String name, String title, String blurb, ChampionInfo info, String parType, ChampionStats stats) {

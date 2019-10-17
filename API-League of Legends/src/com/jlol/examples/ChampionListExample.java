@@ -5,12 +5,18 @@ import java.io.IOException;
 import com.jlol.LolAPI;
 import com.jlol.champion.Champion;
 import com.jlol.champion.ChampionList;
+import com.jlol.exception.InvalidToken;
 import com.jlol.locale.Locale;
 
 class ChampionListExample {
 	public static void main(String[] args) {
 		//Token here
-		LolAPI l = new LolAPI("RGAPI-x");
+		LolAPI l = null;
+		try {
+			l = new LolAPI("RGAPI-x");
+		} catch (InvalidToken e1) {
+			e1.printStackTrace();
+		}
 		//Latest LOL version
 		String last_version = l.getLastVersion();
 		

@@ -4,13 +4,15 @@ import java.io.IOException;
 
 import org.json.JSONArray;
 
+import com.jlol.exception.InvalidToken;
+
 public class LolAPI {
 	private String token;
-	public LolAPI(String token) {
+	public LolAPI(String token) throws InvalidToken {
 		this.token = token;
 		
 		if(!checkToken(token)) {
-			System.err.println("Invalid Token");
+			throw new InvalidToken("Invalid Token: "+token+".");
 		}
 	}
 	public String getToken() {
