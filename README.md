@@ -1,2 +1,2 @@
-#JLol
-###A League of Legends API for Java
+# JLol
+### A League of Legends API for Java
