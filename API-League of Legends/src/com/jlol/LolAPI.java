@@ -1,14 +1,10 @@
 package com.jlol;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 import org.json.JSONArray;
 
 import com.jlol.constant.StaticData;
-import com.jlol.exception.ChampionNotFound;
 import com.jlol.exception.InvalidToken;
 import com.jlol.exception.StatementFailed;
 

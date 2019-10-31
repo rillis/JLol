@@ -57,10 +57,10 @@ public class MatchList {
 						satisfied = true;
 					}
 					if(!satisfied) {
-					JSONObject match = new JSONObject(matches.get(i).toString());
-					
-					Date time=new Date(match.getLong("timestamp"));
-						System.out.println(time.toString() + " Season: " + match.getInt("season"));
+						JSONObject match = new JSONObject(matches.get(i).toString());
+						
+						Date time=new Date(match.getLong("timestamp"));
+						System.out.println(time.toString() + " Id: " + match.getInt("gameId"));
 					}
 				}
 			}

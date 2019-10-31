@@ -1,9 +1,10 @@
 package com.jlol.constant;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class QueueType {
-	static JSONObject staticData;
+	static JSONArray staticData;
 	public static final int CUSTOM = 0;
 	public static final int SR_NORMAL_DRAFT = 400;
 	public static final int SR_RANKED_SOLODUO = 420;
@@ -21,39 +22,30 @@ public class QueueType {
 	public static final int TFT_RANKED = 1100;
 	
 	public static String toString(int QueueType) {
-		switch(QueueType) {
-		case CUSTOM:
-			return "Custom game";
-		case SR_NORMAL_DRAFT:
-			return "SR 5v5 Draft Pick";	
-		case SR_RANKED_SOLODUO:
-			return "SR 5v5 Ranked Solo/Duo";	
-		case SR_NORMAL_BLIND:
-			return "SR 5v5 Blind Pick";	
-		case SR_RANKED_FLEX:
-			return "SR 5v5 Ranked Flex";	
-		case HA_ARAM:
-			return "HA 5v5 ARAM";
-		case TT_BLIND:
-			return "TT 3v3 Blind Pick";
-		case TT_RANKED:
-			return "TT 3v3 Ranked Flex";
-		case CLASH:
-			return "SR 5v5 Clash";
-		case SR_COOP_IA_INTRO:
-			return "SR 5v5 Co-op vs. AI Intro Bot";
-		case SR_COOP_IA_BEGINNER:
-			return "SR 5v5 Co-op vs. AI Beginner Bot";
-		case SR_COOP_IA_INTERMEDIATE:
-			return "SR 5v5 Co-op vs. AI Intermediate Bot";
-		case URF:
-			return "SR 5v5 URF";
-		case TFT_NORMAL:
-			return "TFT Normal";
-		case TFT_RANKED:
-			return "TFT Ranked";
-		default:
-			return "Unknown";
+		String idKey = "queueId";
+		
+		for (int i = 0; i < staticData.length(); i++) {
+			JSONObject data = new JSONObject(staticData.get(i).toString());
+			if(data.getInt(idKey)==QueueType) {
+				
+				String prefix = "";
+				
+				if(data.getString("map").equals("Custom games")) {
+					prefix = "Custom Game";
+				}else if(data.getString("map").equals("Summoner's Rift")) {
+					prefix = "SR ";
+				}else if(data.getString("map").equals("Twisted Treeline")) {
+					prefix = "TT ";
+				}else if(data.getString("map").equals("Howling Abyss")) {
+					prefix = "HA ";
+				}
+				
+				if(data.isNull("description")) {
+					return prefix;
+				}
+				return prefix + data.getString("description").replace(" games", "");
+			}
 		}
+		return "Unknown";
 	}
 }

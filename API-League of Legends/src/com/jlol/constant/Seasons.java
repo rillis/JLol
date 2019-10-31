@@ -1,9 +1,10 @@
 package com.jlol.constant;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Seasons {
-	static JSONObject staticData;
+	static JSONArray staticData;
 	public static final int PRESEASON_2013 = 0;
 	public static final int SEASON_2013 = 1;
 	public static final int PRESEASON_2014 = 2;
@@ -22,14 +23,15 @@ public class Seasons {
 	public static final int SEASON_2020 = 15;
 	
 	
-	public static String toString(int QueueType) {
-		if((QueueType+2) % 2 == 0) {
-			int number = 2013 + (QueueType/2);
-			return "PRESEASON "+number;
-		}else {
-			int number = 2013 + ((QueueType-1)/2);
-			return "SEASON "+number;
+	public static String toString(int Seasons) {
+		String idKey = "id";
+		
+		for (int i = 0; i < staticData.length(); i++) {
+			JSONObject data = new JSONObject(staticData.get(i).toString());
+			if(data.getInt(idKey)==Seasons) {
+				return data.getString("season");
+			}
 		}
-			
+		return "Unknown";
 	}
 }
