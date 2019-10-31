@@ -1,4 +1,4 @@
-package com.match;
+package com.jlol.match;
 
 public class Match {
 	public int matchId;

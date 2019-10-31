@@ -1,4 +1,4 @@
-package com.match;
+package com.jlol.match;
 
 import java.util.Date;
 

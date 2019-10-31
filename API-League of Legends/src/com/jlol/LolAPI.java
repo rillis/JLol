@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 import org.json.JSONArray;
 
+import com.jlol.constant.StaticData;
 import com.jlol.exception.ChampionNotFound;
 import com.jlol.exception.InvalidToken;
 import com.jlol.exception.StatementFailed;
@@ -21,6 +22,8 @@ public class LolAPI {
 		if(!checkToken(token)) {
 			throw new InvalidToken("Invalid Token: "+token+".");
 		}
+		
+		StaticData.setupStaticData(this);
 	}
 	public String getToken() {
 		return token;

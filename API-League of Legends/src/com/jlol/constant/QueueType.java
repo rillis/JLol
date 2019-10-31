@@ -1,6 +1,9 @@
-package com.constant;
+package com.jlol.constant;
+
+import org.json.JSONObject;
 
 public class QueueType {
+	static JSONObject staticData;
 	public static final int CUSTOM = 0;
 	public static final int SR_NORMAL_DRAFT = 400;
 	public static final int SR_RANKED_SOLODUO = 420;

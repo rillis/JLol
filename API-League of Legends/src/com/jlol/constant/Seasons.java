@@ -1,6 +1,9 @@
-package com.constant;
+package com.jlol.constant;
+
+import org.json.JSONObject;
 
 public class Seasons {
+	static JSONObject staticData;
 	public static final int PRESEASON_2013 = 0;
 	public static final int SEASON_2013 = 1;
 	public static final int PRESEASON_2014 = 2;
