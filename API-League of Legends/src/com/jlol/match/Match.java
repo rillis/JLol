@@ -18,6 +18,24 @@ public class Match {
 	public Team[] teams;
 	
 	public Participant[] participants;
+
+	public Match(int gameId, String platformId, Date gameCreation, long gameDuration, int queueId, int mapId,
+			int seasonId, String gameVersion, String gameVersionMajor, String gameMode, String gameType, Team[] teams,
+			Participant[] participants) {
+		this.gameId = gameId;
+		this.platformId = platformId;
+		this.gameCreation = gameCreation;
+		this.gameDuration = gameDuration;
+		this.queueId = queueId;
+		this.mapId = mapId;
+		this.seasonId = seasonId;
+		this.gameVersion = gameVersion;
+		this.gameVersionMajor = gameVersionMajor;
+		this.gameMode = gameMode;
+		this.gameType = gameType;
+		this.teams = teams;
+		this.participants = participants;
+	}
 	
 	
 }
