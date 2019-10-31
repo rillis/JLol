@@ -13,7 +13,7 @@ class ChampionListExample {
 		//Token here
 		LolAPI l = null;
 		try {
-			l = new LolAPI("RGAPI-x");
+			l = new LolAPI("RGAPI-x", "br1");
 		} catch (InvalidToken e1) {
 			e1.printStackTrace();
 		}
