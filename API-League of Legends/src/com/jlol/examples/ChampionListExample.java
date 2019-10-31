@@ -13,7 +13,7 @@ class ChampionListExample {
 		//Token here
 		LolAPI l = null;
 		try {
-			l = new LolAPI("RGAPI-x", "br1");
+			l = new LolAPI("RGAPI-x", "br1", Locale.PORTUGUESE);
 		} catch (InvalidToken e1) {
 			e1.printStackTrace();
 		}
@@ -21,7 +21,7 @@ class ChampionListExample {
 		String last_version = l.getLastVersion();
 		
 		try {
-			Champion[] c = new ChampionList(l).getChampionList(last_version, Locale.PORTUGUESE);
+			Champion[] c = new ChampionList(l).getChampionList(last_version);
 			
 			for (int i = 0; i < c.length; i++) {
 				System.out.println(c[i].name+", "+c[i].title);

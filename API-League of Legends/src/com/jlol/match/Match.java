@@ -15,6 +15,9 @@ public class Match {
 	public String gameMode; //GameMode class
 	public String gameType; //GameType class
 	
+	public Team[] teams;
+	
+	public Participant[] participants;
 	
 	
 }

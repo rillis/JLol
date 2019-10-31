@@ -10,12 +10,14 @@ import com.jlol.exception.ChampionNotFound;
 
 public class ChampionList {
 	String token;
+	private LolAPI api;
 	public ChampionList(LolAPI api) {
+		this.api = api;
 		this.token = api.getToken();
 	}
 	
-	public Champion[] getChampionList(String version, String locale) throws IOException {
-		
+	public Champion[] getChampionList(String version) throws IOException {
+		String locale = api.getLocale();
 		String response = Methods.getWebsiteContent("http://ddragon.leagueoflegends.com/cdn/"+version+"/data/"+locale+"/champion.json");
 		
 		JSONObject path = new JSONObject(response);

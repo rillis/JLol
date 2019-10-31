@@ -11,9 +11,11 @@ import com.jlol.exception.StatementFailed;
 public class LolAPI {
 	private String token;
 	private String region;
-	public LolAPI(String token, String region) throws InvalidToken {
+	private String locale;
+	public LolAPI(String token, String region, String locale) throws InvalidToken {
 		this.token = token;
 		this.region = region;
+		this.locale = locale;
 		
 		if(!checkToken(token)) {
 			throw new InvalidToken("Invalid Token: "+token+".");
@@ -27,6 +29,10 @@ public class LolAPI {
 	
 	public String getRegion() {
 		return region;
+	}
+	
+	public String getLocale() {
+		return locale;
 	}
 	
 	public String getLastVersion() {
