@@ -18,11 +18,11 @@ public class SkinList {
 	public Skin[] getSkinListFromChampion(Champion c, String version, String locale) {
 		
 		try {
-			String response = Methods.getWebsiteContent("http://ddragon.leagueoflegends.com/cdn/"+version+"/data/"+locale+"/champion/"+c.id+".json");
+			String response = Methods.getWebsiteContent("http://ddragon.leagueoflegends.com/cdn/"+version+"/data/"+locale+"/champion/"+c.getId()+".json");
 			
 			JSONObject path = new JSONObject(response);
 			path = path.getJSONObject("data");
-			path = path.getJSONObject(c.id);
+			path = path.getJSONObject(c.getId());
 			JSONArray skinsArr = path.getJSONArray("skins");
 			
 			Skin[] skins = new Skin[skinsArr.length()];

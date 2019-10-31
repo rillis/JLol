@@ -7,13 +7,13 @@ import com.jlol.Methods;
 import com.jlol.exception.StatementFailed;
 
 public class Summoner {
-	public String encryptedSummonerId;
-	public String encryptedAccountId;
-	public String encryptedPUUID;
-	public String nick;
-	public int profileIconID;
-	public long summonerLevel;
-	public long revisionDate;
+	private String encryptedSummonerId;
+	private String encryptedAccountId;
+	private String encryptedPUUID;
+	private String nick;
+	private int profileIconID;
+	private long summonerLevel;
+	private long revisionDate;
 	
 	public Summoner(String nick, LolAPI l) {
 		try {
@@ -35,4 +35,34 @@ public class Summoner {
 			e.printStackTrace();
 		}
 	}
+
+	public String getEncryptedSummonerId() {
+		return encryptedSummonerId;
+	}
+
+	public String getEncryptedAccountId() {
+		return encryptedAccountId;
+	}
+
+	public String getEncryptedPUUID() {
+		return encryptedPUUID;
+	}
+
+	public String getNick() {
+		return nick;
+	}
+
+	public int getProfileIconID() {
+		return profileIconID;
+	}
+
+	public long getSummonerLevel() {
+		return summonerLevel;
+	}
+
+	public long getRevisionDate() {
+		return revisionDate;
+	}
+	
+	
 }

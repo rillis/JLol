@@ -3,14 +3,14 @@ package com.jlol.match;
 import com.jlol.summoner.Summoner;
 
 public class Participant {
-	public int paticipantId;
-	public int teamId;
-	public int championId;
-	public int spell1Id; //SummonerSpells class
-	public int spell2Id; //SummonerSpells class
-	public ParticipantStats stats;
-	public ParticipantTimeline timeline;
-	public Summoner player;
+	private int paticipantId;
+	private int teamId;
+	private int championId;
+	private int spell1Id; //SummonerSpells class
+	private int spell2Id; //SummonerSpells class
+	private ParticipantStats stats;
+	private ParticipantTimeline timeline;
+	private Summoner player;
 	
 	public Participant(int paticipantId, int teamId, int championId, int spell1Id, int spell2Id, ParticipantStats stats,
 			ParticipantTimeline timeline, Summoner player) {
@@ -22,5 +22,38 @@ public class Participant {
 		this.stats = stats;
 		this.timeline = timeline;
 		this.player = player;
+	}
+
+	public int getPaticipantId() {
+		return paticipantId;
+	}
+
+	public int getTeamId() {
+		return teamId;
+	}
+
+	public int getChampionId() {
+		return championId;
+	}
+
+	public int getSpell1Id() {
+		return spell1Id;
+	}
+
+	public int getSpell2Id() {
+		return spell2Id;
+	}
+
+	public ParticipantStats getStats() {
+		return stats;
+	}
+
+	public ParticipantTimeline getTimeline() {
+		return timeline;
+	}
+
+	public Summoner getPlayer() {
+		return player;
 	}	
+	
 }

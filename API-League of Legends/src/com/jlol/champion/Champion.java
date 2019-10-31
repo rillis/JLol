@@ -6,14 +6,14 @@ import com.jlol.LolAPI;
 import com.jlol.exception.ChampionNotFound;
 
 public class Champion {
-	public String id;
-	public String key;
-	public String name;
-	public String title;
-	public String blurb;
-	public ChampionInfo info;
-	public String parType;
-	public ChampionStats stats;
+	private String id;
+	private String key;
+	private String name;
+	private String title;
+	private String blurb;
+	private ChampionInfo info;
+	private String parType;
+	private ChampionStats stats;
 	
 	public Champion(String searchId, LolAPI api, String version, String locale) throws ChampionNotFound {
 		Champion c = null;
@@ -54,4 +54,38 @@ public class Champion {
 	public String getSplashImageSkinUrl(int skinId) {
 		return "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/"+id+"_"+skinId+".jpg";
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getBlurb() {
+		return blurb;
+	}
+
+	public ChampionInfo getInfo() {
+		return info;
+	}
+
+	public String getParType() {
+		return parType;
+	}
+
+	public ChampionStats getStats() {
+		return stats;
+	}
+	
+	
 }

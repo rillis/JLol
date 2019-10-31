@@ -24,7 +24,7 @@ class ChampionListExample {
 			Champion[] c = new ChampionList(l).getChampionList(last_version);
 			
 			for (int i = 0; i < c.length; i++) {
-				System.out.println(c[i].name+", "+c[i].title);
+				System.out.println(c[i].getName()+", "+c[i].getTitle());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

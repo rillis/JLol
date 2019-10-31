@@ -47,7 +47,7 @@ public class MatchList {
 					break;
 				}
 				cont += 100;
-				response = l.runStatement("/lol/match/v4/matchlists/by-account/"+s.encryptedAccountId+mod+cont,true);
+				response = l.runStatement("/lol/match/v4/matchlists/by-account/"+s.getEncryptedAccountId()+mod+cont,true);
 				path = new JSONObject(response);
 				matches = path.getJSONArray("matches");
 				

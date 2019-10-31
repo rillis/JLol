@@ -3,17 +3,17 @@ package com.jlol.match;
 import java.util.Date;
 
 public class Match {
-	public int gameId; //id from match
-	public String platformId; //BR1, EUN1, EUW1 : region
-	public Date gameCreation; //(UNIX) Datetime creation match, after picks and bans, loading screen
-	public long gameDuration; //Game duration in seconds
-	public int queueId; //QueueType class
-	public int mapId; //Maps class
-	public int seasonId; //Seasons class
-	public String gameVersion; //XX.XX.XXX.XXX
-	public String gameVersionMajor; //XX.XX
-	public String gameMode; //GameMode class
-	public String gameType; //GameType class
+	private int gameId; //id from match
+	private String platformId; //BR1, EUN1, EUW1 : region
+	private Date gameCreation; //(UNIX) Datetime creation match, after picks and bans, loading screen
+	private long gameDuration; //Game duration in seconds
+	private int queueId; //QueueType class
+	private int mapId; //Maps class
+	private int seasonId; //Seasons class
+	private String gameVersion; //XX.XX.XXX.XXX
+	private String gameVersionMajor; //XX.XX
+	private String gameMode; //GameMode class
+	private String gameType; //GameType class
 	
 	public Team[] teams;
 	
@@ -35,6 +35,58 @@ public class Match {
 		this.gameType = gameType;
 		this.teams = teams;
 		this.participants = participants;
+	}
+
+	public int getGameId() {
+		return gameId;
+	}
+
+	public String getPlatformId() {
+		return platformId;
+	}
+
+	public Date getGameCreation() {
+		return gameCreation;
+	}
+
+	public long getGameDuration() {
+		return gameDuration;
+	}
+
+	public int getQueueId() {
+		return queueId;
+	}
+
+	public int getMapId() {
+		return mapId;
+	}
+
+	public int getSeasonId() {
+		return seasonId;
+	}
+
+	public String getGameVersion() {
+		return gameVersion;
+	}
+
+	public String getGameVersionMajor() {
+		return gameVersionMajor;
+	}
+
+	public String getGameMode() {
+		return gameMode;
+	}
+
+	public String getGameType() {
+		return gameType;
+	}
+
+	public Team[] getTeams() {
+		return teams;
+	}
+
+	public Participant[] getParticipants() {
+		return participants;
 	}
 	
 	
